@@ -1,10 +1,10 @@
 # Overview
 
-{Important!  Do not say in this section that this is college assignment.  Talk about what you are trying to accomplish as a software engineer to further your learning.}
+This project was completed to further my C++ abilities an knowledge.
 
-{Provide a description the software that you wrote to demonstrate the C++ language.}
+This program is the classic Tic-Tac-Toe game. It takes input from 2 players and determines a draw, or a winner. It can also save the board to be played again later.
 
-{Describe your purpose for writing this software.}
+I chose to write this program, because it is commonly known and incorperates many of the different core concepts of C++
 
 {Provide a link to your YouTube demonstration.  It should be a 4-5 minute demo of the software running and a walkthrough of the code.  Focus should be on sharing what you learned about the language syntax.}
 
@@ -12,19 +12,15 @@
 
 # Development Environment
 
-{Describe the tools that you used to develop the software}
+Visual studio community 2022
 
-{Describe the programming language that you used and any libraries.}
+C++
 
 # Useful Websites
-
-{Make a list of websites that you found helpful in this project}
-* [Web Site Name](http://url.link.goes.here)
-* [Web Site Name](http://url.link.goes.here)
+* [W3schools](https://www.w3schools.com/cpp/default.asp)
 
 # Future Work
 
-{Make a list of things that you need to fix, improve, and add in the future.}
-* Item 1
-* Item 2
-* Item 3
+* Add saving names with the board
+* Add choosing a symbol to use
+* Improve user input validation
