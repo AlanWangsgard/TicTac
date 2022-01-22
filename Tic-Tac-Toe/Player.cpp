@@ -4,6 +4,8 @@
 		string playerName = x;
 	}*/
 
+	//sets the player name, number, and symbol
+
 	void Player::setName(std::string x) {
 		playerName = x;
 	}

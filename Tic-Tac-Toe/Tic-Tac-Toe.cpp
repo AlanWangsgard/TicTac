@@ -7,7 +7,7 @@
 //using namespace std;
 
 
-
+//Validates the users input
 int validateInput(std::string prompt, int start, int end) {
     int value;
     bool valid = false;
@@ -25,6 +25,7 @@ int validateInput(std::string prompt, int start, int end) {
     return value;
 }
 
+//Saves the game to a file
 void saveGame(vector<std::string> board) {
     ofstream file("games.json");
 
@@ -36,6 +37,7 @@ void saveGame(vector<std::string> board) {
     file.close();
 }
 
+//Loads the game from a set file
 vector<std::string> loadGame() {
     std::string myText;
     vector<std::string> board;
@@ -56,6 +58,7 @@ vector<std::string> loadGame() {
     return board;
 }
 
+//Sets the board for the game
 vector<std::string> setBoard() {
 
     int choice;
@@ -70,7 +73,7 @@ vector<std::string> setBoard() {
         return board;
     }
 }
-
+//Places the symbol on the board if the spot is valid
 int place(vector<string> board, string prompt) {
     int numberPlace;
     bool canPlace = false;
@@ -91,10 +94,12 @@ int place(vector<string> board, string prompt) {
     }
 }
 
+//displays the game board
 void displayBoard(vector<string> board) {
     cout << endl << endl << endl << "\t" << " " << board[0] << " | " << board[1] << " | " << board[2] << " " << endl << "\t" << "---+---+---" << endl << "\t" << " " << board[3] << " | " << board[4] << " | " << board[5] << endl << "\t" << "---+---+---" << endl << "\t" << " " << board[6] << " | " << board[7] << " | " << board[8] << endl << endl << endl;
 }
 
+//checks to see if there is a draw
 bool checkDraw(vector<string> board) {
 
     int count = 0;
@@ -113,6 +118,7 @@ bool checkDraw(vector<string> board) {
         
 }
 
+//Checks the board to see if someone has won
 bool checkBoard(vector<string> board) {
 
     //coulumns
@@ -134,14 +140,17 @@ bool checkBoard(vector<string> board) {
 
 }
 
+//Displays a message if the game is won
 void gameWon(string x) {
     cout << x << " won the game!";
 }
 
+//displays a message if the game is a draw
 void gameDraw() {
     cout << "All the spaces are filled and no one has 3 in a row, it's a Draw!";
 }
 
+//Main function to conduct the game
 int main()
 {
     vector<string> board = setBoard();
@@ -168,6 +177,7 @@ int main()
 
     Player players[2] = { playerOne, playerTwo };
 
+    //Keeps the game going unless the user enters 0 to save
     while (valid && draw == false)
     {
         if (playerNumber == 0)
@@ -179,7 +189,7 @@ int main()
             playerNumber = 0;
         }
         displayBoard(board);
-        string prompt = "Which spot do you choose?(1-9)" + players[playerNumber].playerName +" ";
+        string prompt = "Which spot do you choose?(1-9), or enter 0 to save the game " + players[playerNumber].playerName +" ";
         spot = place(board, prompt);
         
         if (spot == 0) {
